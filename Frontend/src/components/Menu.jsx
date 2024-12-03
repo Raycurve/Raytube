@@ -25,7 +25,7 @@ const Container = styled.div `
   flex:1;
   color:${({theme}) => theme.text };
   height:100vh;
-  background-color:${({theme}) => theme.bg };
+  background-color:${({theme}) => theme.bgLighter };
   font-size:10px;
   font-family:roboto;
   font-weight:500;
@@ -70,6 +70,7 @@ const Button = styled.button`
   border-radius: 2.5px;
   font-weight: 500; 
   font-size: 10px;
+  font-family:roboto;
   margin-top: 8px;
   cursor: pointer;
   display: flex;
