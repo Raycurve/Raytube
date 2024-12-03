@@ -1,6 +1,8 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
+import { darkTheme, lightTheme} from "./utils/darkmode";
+import { useState } from "react";
 
 
 const Container = styled.div`
@@ -10,51 +12,56 @@ const Container = styled.div`
 const Main = styled.div`
   //main 7 times the width of other flex element i.e. menu :)
   flex:7;
+  background-color: ${({theme})=>theme.bg}
 `;
 const Wrapper = styled.div``;
 
 function App() {
+  const [darkMode,setDarkMode] = useState(true);
+  
   return (
-    <Container>
-      <Menu />
-      <Main>
-        <Navbar />
-        <Wrapper>
-          <h1>video cards</h1>
-          <h1>video cards</h1>
-          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          <h1>video cards</h1>
-          <h1>video cards</h1>          
+    <ThemeProvider theme={darkMode ? darkTheme:lightTheme}>
+      <Container>
+        <Menu darkMode = {darkMode} setDarkMode = {setDarkMode}/>
+        <Main>
+          <Navbar />
+          <Wrapper>
+            <h1>video cards</h1>
+            <h1>video cards</h1>
+            <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          <h1>video cards</h1>
+            <h1>video cards</h1>          
 
-        </Wrapper>
-      </Main>
-    </Container>
+          </Wrapper>
+        </Main>
+      </Container>
+    </ThemeProvider>
 
   )
 }

@@ -19,11 +19,13 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import '@fontsource/roboto/500.css';
+
+
 const Container = styled.div `
   flex:1;
-  color:white;
+  color:${({theme}) => theme.text };
   height:100vh;
-  background-color:#202020;
+  background-color:${({theme}) => theme.bg };
   font-size:10px;
   font-family:roboto;
   font-weight:500;
@@ -42,7 +44,7 @@ const Logo  = styled.div`
 `
 const Hr =styled.hr`
   margin: 8px 0px;
-  border: 0.5px solid #373737
+  border: 0.5px solid ${({theme}) => theme.soft }
 `
 
 const Item = styled.div`
@@ -59,7 +61,6 @@ const Img = styled.img`
 `
 const Login = styled.div`
   font-weight: 300;
-  // font-size: small;
 `
 const Button = styled.button`
   padding:4px 12px;
@@ -67,14 +68,25 @@ const Button = styled.button`
   border: 0.5px solid #3ea6ff;
   color: #3ea6ff;
   border-radius: 2.5px;
-  font-weight: 500;
+  font-weight: 500; 
+  font-size: 10px;
   margin-top: 8px;
   cursor: pointer;
   display: flex;
   align-items:center;
   gap: 5px;
 `
-export default function Menu() {
+
+const Title = styled.h2`
+  color :#aaaaaa;
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 16px;
+
+`
+// console.log(${theme});
+export default function Menu({darkMode,setDarkMode}) {
+  
   return (
     <Container>
       <Wrapper>
@@ -111,7 +123,9 @@ export default function Menu() {
         </Login>
 
         <Hr/>
-
+        <Title>
+          BEST OF RAYTUBE
+        </Title>
         <Item>
           <LibraryMusicIcon/>
           Music  
@@ -152,7 +166,8 @@ export default function Menu() {
           <HelpOutlineIcon/>
           Hello & Support  
         </Item>
-        <Item>
+        <Item onClick={()=>{setDarkMode(!darkMode); console.log("theme changed");
+        }}>
           <SettingsBrightnessIcon/>
           Change Mode  
         </Item>
