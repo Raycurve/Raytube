@@ -4,7 +4,7 @@ import Card from '../components/Card'
 
 
 const Container = styled.div`
-padding:20px  50px;
+    padding:20px  50px;
     display:flex;
     justify-content: space-between;
     flex-wrap:wrap;

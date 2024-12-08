@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import raytube from "../imgs/verticrop-bgrem.png"
 
@@ -91,9 +92,11 @@ export default function Menu({darkMode,setDarkMode}) {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={raytube} />
-        </Logo>
+        <Link to="/" style={{textDecoration:"none"}}>
+          <Logo>
+            <Img src={raytube} />
+          </Logo>
+        </Link>
         <Item>
           <HomeIcon/>
           Home  

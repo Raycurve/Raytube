@@ -1,4 +1,5 @@
-import React from 'react'
+import {React} from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import srrc from '../imgs/thumbnail.webp';
 import pfp from '../imgs/pfp.webp'
@@ -12,7 +13,6 @@ const Container = styled.div`
 const Image = styled.img`
 height: 160px;
 width:100%;
-background-color:purple;
 `
 const Details = styled.div`
   display:flex;
@@ -51,16 +51,19 @@ const Info = styled.div`
 `
 export default function Card() {
   return (
-    <Container>
-      <Image src={srrc}/>
-      <Details>
-        <ChannelImg src={pfp}/>
-        <Texts>
-          <Title>How to make good ui</Title>
-          <ChannelName>Raycurve</ChannelName>
-          <Info>400,348 views • 2 days ago</Info>
-        </Texts>
-      </Details>
-    </Container>
+    <Link to="/video/test" style={{textDecoration:"none"}}>
+    
+      <Container>
+        <Image src={srrc}/>
+        <Details>
+          <ChannelImg src={pfp}/>
+          <Texts>
+            <Title>How to make good ui</Title>
+            <ChannelName>Raycurve</ChannelName>
+            <Info>400,348 views • 2 days ago</Info>
+          </Texts>
+        </Details>
+      </Container>
+    </Link>
   )
 }

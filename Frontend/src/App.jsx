@@ -3,6 +3,7 @@ import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 import { darkTheme, lightTheme} from "./utils/darkmode";
 import { useState } from "react";
+import {createGlobalStyle} from 'styled-components'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +14,20 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
+
+const GlobalStyle = createGlobalStyle`
+  /* Hide scrollbar globally while keeping scroll functionality */
+  body {
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    overflow: hidden; /* Prevent overflow */
+    overflow-y: scroll; /* Allow scrolling without scrollbar */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; 
+  }
+`;
 
 const Container = styled.div`
 
@@ -29,7 +44,10 @@ function App() {
   const [darkMode,setDarkMode] = useState(true);
   
   return (
+    <>
+    <GlobalStyle/>
     <ThemeProvider theme={darkMode ? darkTheme:lightTheme}>
+      
       <Container>
           <BrowserRouter>
             
@@ -52,7 +70,7 @@ function App() {
         </BrowserRouter>
       </Container>
     </ThemeProvider>
-
+    </>
   )
 }
 
