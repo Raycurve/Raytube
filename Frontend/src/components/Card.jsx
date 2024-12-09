@@ -5,28 +5,31 @@ import srrc from '../imgs/thumbnail.webp';
 import pfp from '../imgs/pfp.webp'
 ``
 const Container = styled.div`
-    width:300px;
-    margin-bottom:36px;
+    width:${(props)=>props.type !== "sm" && "300px"};
+    margin-bottom:${(props)=>props.type === "sm"?"8px":"36px"};
     cursor:pointer;
-    // background-color:powderblue;
+    display: ${(props)=>props.type === "sm" && "flex"};
+    
 `
 const Image = styled.img`
-height: 160px;
-width:100%;
+  height: ${(props)=>props.type === "sm"?"96px":"160px"};
+  width:100%;
+  flex:1;
 `
 const Details = styled.div`
   display:flex;
-  margin-top:12px;
+  margin-top:${(props)=>props.type !== "sm" && "12px"};
   // height:120px;
   gap:8px;
-  padding:10px;
+  padding:${(props)=>props.type === "sm"?"0px 10px":"10px"};
+  flex:1;
   // background-color:red;
 `
 const ChannelImg = styled.img`
   width:28px;
   height:28px;
   border-radius:50%;
-  background-color:blue;
+  display: ${(props)=>props.type === "sm" && "none"};
 `
 
 const Texts = styled.div`
@@ -49,14 +52,14 @@ const Info = styled.div`
   color: ${({theme})=>theme.textSoft};
 
 `
-export default function Card() {
+export default function Card({type}) {
   return (
     <Link to="/video/test" style={{textDecoration:"none"}}>
     
-      <Container>
-        <Image src={srrc}/>
-        <Details>
-          <ChannelImg src={pfp}/>
+      <Container type = {type}>
+        <Image type={type} src={srrc}/>
+        <Details type = {type}>
+          <ChannelImg type={type} src={pfp}/>
           <Texts>
             <Title>How to make good ui</Title>
             <ChannelName>Raycurve</ChannelName>
