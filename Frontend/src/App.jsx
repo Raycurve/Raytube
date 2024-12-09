@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
+import Login from "./pages/Login";
 
 const GlobalStyle = createGlobalStyle`
   /* Hide scrollbar globally while keeping scroll functionality */
@@ -59,6 +60,12 @@ function App() {
               <Routes>
                 <Route path="/">
                   <Route index element={<Home/>}/>
+
+
+
+                  <Route path = "login" element={<Login/>}/>
+                  
+                  
                   <Route path = "video">
                     <Route path=":id" element={<Video/>}/>
                   </Route>

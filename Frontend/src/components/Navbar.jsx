@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import '@fontsource/roboto/500.css';
-
+import {Link} from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -71,7 +71,9 @@ export default function Navbar() {
           <Input placeholder='Search'/> 
           <SearchIcon/>
         </Search>
-        <Button><AccountCircleIcon/> SIGN IN</Button>
+        <Link to="/login" style={{textDecoration:"none"}}>
+          <Button><AccountCircleIcon/> SIGN IN</Button>
+          </Link>
       </Wrapper>
     </Container>
   )

@@ -111,7 +111,7 @@ export default function Video() {
     <Container>
       <Content>
         <VideoWrapper><iframe width="880" height="495" src="https://www.youtube.com/embed/Vitf8YaVXhc" title="I never understood why you can&#39;t go faster than light - until now!" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></VideoWrapper>
-        <Title>Test vid</Title>
+        <Title>Test video</Title>
         <Details>
           <Info>400,348 views • 2 days ago</Info>
           <Buttons>

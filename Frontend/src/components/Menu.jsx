@@ -41,7 +41,7 @@ const Logo  = styled.div`
   align-items: center;
   justify-content: center;
   // gap:5px;
-  padding:7px;
+  padding: 0px 7px;
 `
 const Hr =styled.hr`
   margin: 8px 0px;
@@ -54,7 +54,13 @@ const Item = styled.div`
   align-items: center;
   gap: 16px;
   cursor:pointer;
-  padding-bottom:8px;
+  // padding-bottom:8px;
+  padding:5px 3px;
+
+  &:hover{
+    background-color: ${({theme})=>theme.soft};
+    border-radius:3px;
+  }
 `
 
 const Img = styled.img`
@@ -123,7 +129,10 @@ export default function Menu({darkMode,setDarkMode}) {
         <Hr/>
         <Login>
           Sign in to like videos comment and subscribe
-          <Button><AccountCircleIcon/> SIGN IN</Button>
+          <Link to="/login" style={{textDecoration:"none"}}>
+            <Button><AccountCircleIcon/> SIGN IN</Button>
+          </Link>
+
         </Login>
 
         <Hr/>
